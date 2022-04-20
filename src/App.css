@@ -1,0 +1,128 @@
+/*
+*{
+  border: 1px solid black;
+}*/
+
+body{
+  background-color:rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+
+
+.container{
+  border-radius: 4px;
+  box-shadow:rgba(127, 16, 191, 1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.reminder-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-add{
+  height:40px;
+  width:70px;
+  border-radius: 5px;
+}
+.btn-save{
+  height:30px;
+  width:70%;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+.btn-save-sec{
+  display: flex;
+}
+.checkbox{
+  margin-right:23%;
+}
+
+.title{
+}
+
+.input-section{
+  margin-top: 10px;
+  width:70%;
+  margin: 10px auto;
+}
+
+input{
+  border-radius: 2px;
+}
+
+/*give no restrictions/boundaries to the parent horizon*/
+.container{
+  width: 60%;
+  margin: 50px auto;
+}
+
+
+.header-container{
+  height:90px;
+
+  width:70%;
+  margin: 10px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-task{
+  /*height:230px;*//*cancel restriction, for we wont scroll overflows*/
+}
+
+.show-task{
+  /*height:170px;*/
+}
+
+.footer{
+  /*height:70px;*/
+}
+
+
+button{
+  background-color:purple;
+  color:white;
+}
+
+.text{
+  height:30px;
+  width:99%;
+  border-radius: 2px;
+}
+
+
+.footer-divs{
+  height: 33px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.show-task-container{
+  width:70%;
+  margin: 0px auto;
+}
+.task{
+  padding: 5px;
+  /*height:54px;*/
+  margin-top: 14px;
+  margin-bottom: 14px;
+  border-radius: 3px;
+  box-shadow:rgba(127, 16, 191, 1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task1, .task2{
+  border-left: 5px solid purple;
+}
