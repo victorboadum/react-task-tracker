@@ -1,90 +1,83 @@
 
 import './App.css';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
-
+import Header from './Components/Header';
+import AddTask from './Components/AddTask';
+import ShowTask from './Components/ShowTask';
+import Footer from './Components/Footer';
+import {useState} from "react";
 
 
 
 function App() {
+
+  const [tasks, setTasks] = useState(
+    [
+        {
+            id: 1,
+            text: 'Doctors Appointment',
+            day: 'Feb 5th at 2:30pm',
+            reminder: false,
+        },
+        {
+            id: 2,
+            text: 'Meeting at School',
+            day: 'Feb 6th at 1:30pm',
+            reminder: false,
+        },
+        {
+            id: 3,
+            text: 'Food Shopping',
+            day: 'Feb 5th at 2:30pm',
+            reminder: false,
+        },
+        {
+            id: 4,
+            text: 'Gyak Coding',
+            day: 'March 5th at 2:30pm',
+            reminder: false,
+        },
+      ]
+  )
+
+      //delete task
+      const deleteTask = (id)=> {
+        console.log('deleteTask', id)
+        setTasks(tasks.filter((task)=>{
+          return(task.id !== id);
+        }))
+      }
+
+      //ondbClick
+      const toggleOndbClick = (id)=> {
+        console.log('dbClick on: ', id)
+        setTasks(tasks.map((task)=>{
+          return(
+            task.id === id ? {...task, reminder : !task.reminder} : {...task}
+          );
+        }))
+      }
+
+      //AddTask
+      const addTask = (text, day, reminder)=> {
+        setTasks([...tasks, {id:tasks.length+1, text, day, reminder}]);
+      }
+
+              //tasks.length+1
   return (
     <div>
 
 
       <div className="container">
 
-        <header className="header">
 
-          <div className="header-container">
-            <div>
-              <h1 className="title">Task Tracker</h1>
-            </div>
+        <Header />
+      
+        <AddTask addTask={addTask}/>
 
-            <div>
-              <button className="btn-add">
-                Add
-              </button>
-            </div>
-          </div>
-          
-        </header>
-
-
-        <main className="add-task">
-          <form action="">
-
-            <div className="input-section">
-              <label>Task:</label> <br />
-              <input type="text" placeholder="Add Task" className="text"/>
-            </div>
-
-            <div className="input-section">
-              <label>Day & time:</label> <br />
-              <input type="text" placeholder="Add Task" className="text"/>
-            </div>
-
-            <div className="input-section reminder-section">
-              <p>Set Reminder:</p> <input type="checkbox" className="checkbox"/>
-            </div>
-
-            <div className="input-section btn-save-sec">
-              <button type="submit" className="btn-save"> Save Task</button>
-            </div>
-            
-          </form>
-        </main>
-
-
-
-        <section className="show-task">
-          <div  className="show-task-container">
-            <div className="task task1">
-              <p> Doctor Appointment <AiOutlineCloseCircle style={{color:"red", marginRight:"10px"}}/></p>
-              <p>Feb 5th at 2:30pm</p>
-            </div>
-            <div className="task task2">
-              <p> Meeting at School <AiOutlineCloseCircle style={{color:"red", marginRight:"10px"}}/></p>
-              <p>Feb 6th at 1:30pm</p>
-            </div>
-            <div className="task">
-              <p> Dinner with Mom <AiOutlineCloseCircle style={{color:"red", marginRight:"10px"}}/></p>
-              <p>Feb 8th at 7:00pm</p>
-            </div>
-          </div>
-        </section>
-
-
-
-        <footer className="footer">
-
-          <div className="footer-divs">
-              &copy; Copyright
-          </div>
-
-          <div className="footer-divs">
-            <a href="/">About</a> 
-          </div>
-          
-        </footer>
+        {tasks.length > 0 ? <ShowTask tasks={tasks} onDelete={deleteTask} toggleOndbClick={toggleOndbClick}/>
+        : 'no task to show'}
+        
+        <Footer />
 
       </div>
 

@@ -27,7 +27,7 @@ body{
   border-radius: 5px;
 }
 .btn-save{
-  height:30px;
+  height:40px;
   width:70%;
   border-radius: 3px;
   margin: 10px auto;
@@ -74,7 +74,7 @@ input{
   /*height:230px;*//*cancel restriction, for we wont scroll overflows*/
 }
 
-.show-task{
+.show-task-section{
   /*height:170px;*/
 }
 
@@ -123,6 +123,11 @@ p{
   justify-content: space-between;
 }
 
-.task1, .task2{
+.border-left-task{
   border-left: 5px solid purple;
+}
+
+
+.hover-icon:hover{
+  transform: scale(1.5);
 }
