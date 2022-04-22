@@ -62,7 +62,16 @@ function App() {
         setTasks([...tasks, {id:tasks.length+1, text, day, reminder}]);
       }
 
-              //tasks.length+1
+
+      const [isAddTask, setIsAddTask] = useState(false);
+
+      //toggleAddTaskForm
+      const toggleAddTaskForm = ()=> {
+        setIsAddTask(!isAddTask);
+      }
+
+
+
   return (
     <div>
 
@@ -70,9 +79,9 @@ function App() {
       <div className="container">
 
 
-        <Header />
+        <Header isAddTask={isAddTask} toggleAddTaskForm={toggleAddTaskForm}/>
       
-        <AddTask addTask={addTask}/>
+        {isAddTask && <AddTask addTask={addTask}/>}
 
         {tasks.length > 0 ? <ShowTask tasks={tasks} onDelete={deleteTask} toggleOndbClick={toggleOndbClick}/>
         : 'no task to show'}

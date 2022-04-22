@@ -2,11 +2,11 @@ import './../App.css';
 import Button from './Button';
 
 
-const Header = () => {
+const Header = ({isAddTask, toggleAddTaskForm}) => {
 
-  const onClick = () => {
+  /*const onClick = () => {
     console.log("hello world")
-  }
+  }*/
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Header = () => {
                 <h1 className="title">Task Tracker</h1>
             </div>
 
-            <Button onClick={onClick}/>
+            <Button isAddTask={isAddTask} onClick={()=> toggleAddTaskForm()}/>
             
         </div>
 
