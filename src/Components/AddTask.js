@@ -38,7 +38,7 @@ import {useState} from 'react'
 
             <div className="input-section">
               <label>Day & time:</label> <br />
-              <input type="text" onChange={(le)=> setDay(le.target.value)} value={day} placeholder="Add Task" className="text"/>
+              <input type="text" onChange={(le)=> setDay(le.target.value)} value={day} placeholder="Add Day" className="text"/>
             </div>
 
             <div className="input-section reminder-section">

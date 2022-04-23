@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctors Appointment",
+      "day": "Feb 5th at 2:30pm",
+      "reminder": false
+    },
+    {
+      "id": 4,
+      "text": "Gyak Coding",
+      "day": "March 5th at 2:30pm",
+      "reminder": false
+    },
+    {
+      "text": "make task",
+      "day": "monday",
+      "reminder": false,
+      "id": 5
+    },
+    {
+      "text": "mary asantewaa",
+      "day": "tuesday",
+      "reminder": true,
+      "id": 6
+    },
+    {
+      "text": "george ageorgia",
+      "day": "thursday",
+      "reminder": false,
+      "id": 7
+    }
+  ]
+}
