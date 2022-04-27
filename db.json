@@ -29,6 +29,12 @@
       "day": "thursday",
       "reminder": false,
       "id": 7
+    },
+    {
+      "text": "janet donkor go to kumasi",
+      "day": "monday 3:00 am",
+      "reminder": false,
+      "id": 8
     }
   ]
 }

@@ -1,5 +1,6 @@
 import './../App.css';
 import Button from './Button';
+import {useLocation} from 'react-router-dom'
 
 
 const Header = ({isAddTask, toggleAddTaskForm}) => {
@@ -7,6 +8,9 @@ const Header = ({isAddTask, toggleAddTaskForm}) => {
   /*const onClick = () => {
     console.log("hello world")
   }*/
+
+  const location = useLocation();
+
 
   return (
     <div>
@@ -17,13 +21,14 @@ const Header = ({isAddTask, toggleAddTaskForm}) => {
                 <h1 className="title">Task Tracker</h1>
             </div>
 
-            <Button isAddTask={isAddTask} onClick={()=> toggleAddTaskForm()}/>
-            
+            { location.pathname === "/" &&
+              <Button isAddTask={isAddTask} onClick={()=> toggleAddTaskForm()}/>
+            }
         </div>
 
     </header>
     </div>
-  )
+  ) 
 }
 
 export default Header

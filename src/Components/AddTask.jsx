@@ -42,7 +42,7 @@ import {useState} from 'react'
             </div>
 
             <div className="input-section reminder-section">
-              <p>Set Reminder:</p> <input type="checkbox" required checked={reminder} onChange={(le)=> setReminder(le.currentTarget.checked)} value={reminder} className="checkbox"/>
+              <p>Set Reminder:</p> <input type="checkbox" checked={reminder} onChange={(le)=> setReminder(le.currentTarget.checked)} value={reminder} className="checkbox"/>
             </div>
 
             <div className="input-section btn-save-sec">

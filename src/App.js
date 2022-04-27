@@ -4,7 +4,10 @@ import Header from './Components/Header';
 import AddTask from './Components/AddTask';
 import ShowTask from './Components/ShowTask';
 import Footer from './Components/Footer';
+import About from './Components/About';
 import {useState, useEffect} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+//import {Routes as Router, Route} from "react-router-dom"
 
 
 
@@ -166,20 +169,40 @@ function App() {
 
 
   return (
-    
-      <div className="container">
 
-
-        <Header isAddTask={isAddTask} toggleAddTaskForm={toggleAddTaskForm}/>
-      
-        {isAddTask && <AddTask addTask={addTask}/>}
-
-        {tasks.length > 0 ? <ShowTask tasks={tasks} onDelete={deleteTask} toggleOndbClick={toggleOndbClick}/>
-        : 'no task to show'}
+      <Router>
         
-        <Footer />
+          <div className="container">
 
-      </div>
+
+            <Header isAddTask={isAddTask} toggleAddTaskForm={toggleAddTaskForm}/>
+
+
+            <Routes>
+              <Route path="/" element={
+              
+              <>
+                {isAddTask && <AddTask addTask={addTask}/>}
+
+                {tasks.length > 0 ? <ShowTask tasks={tasks} onDelete={deleteTask} toggleOndbClick={toggleOndbClick}/>
+                : 'no task to show'}
+              </>
+              
+              } />
+
+          
+              <Route path="/about" element={<About/>} />
+
+              <Route path="/task/:id" element={<About/>} />
+
+            </Routes>
+
+            
+            <Footer />
+
+          </div>
+        
+      </Router>
 
   );
 }
