@@ -5,9 +5,9 @@ import AddTask from './Components/AddTask';
 import ShowTask from './Components/ShowTask';
 import Footer from './Components/Footer';
 import About from './Components/About';
+import TaskDetails from './Components/TaskDetails';
 import {useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-//import {Routes as Router, Route} from "react-router-dom"
 
 
 
@@ -98,7 +98,7 @@ function App() {
       const toggleOndbClick = async (id)=> {
         console.log('dbClick on: ', id)
         
-        //get-db-data:
+        //get-db-data: & update toggle on db:
         const taskToToggle = await fetchTask(id);
         //modify-pulled-db-data:
         const updatedTask = {...taskToToggle, reminder:!taskToToggle.reminder}
@@ -167,7 +167,7 @@ function App() {
       }
 
 
-
+  //NOTE: create a link to hit various routes
   return (
 
       <Router>
@@ -193,7 +193,7 @@ function App() {
           
               <Route path="/about" element={<About/>} />
 
-              <Route path="/task/:id" element={<About/>} />
+              <Route path="/task/:id" element={<TaskDetails/>} />
 
             </Routes>
 

@@ -10,6 +10,9 @@ const Header = ({isAddTask, toggleAddTaskForm}) => {
   }*/
 
   const location = useLocation();
+  //const {pathname} = location;
+  //const {pathname} = useLocation();
+
 
 
   return (

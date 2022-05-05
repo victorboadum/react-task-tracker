@@ -1,5 +1,6 @@
 import './../App.css';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import {Link} from 'react-router-dom'
 
 
 
@@ -13,6 +14,7 @@ const Tasks = ({tasks, onDelete, toggleOndbClick}) => {
                   onClick={()=> onDelete(task.id)} 
                   className="hover-icon" style={{color:"red", marginRight:"10px"}}/></p>
                 <p>{task.day}</p>
+                <p><Link to={`/task/${task.id}`}> view details</Link></p>
             </div>)
         })}
         
