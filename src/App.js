@@ -29,18 +29,20 @@ function App() {
 
   //fetch tasks
   //make an async-func to await a fetch-api
+  //GET db data: without an (id)
   const fetchTasks = async ()=>{
     const res = await fetch("http://localhost:5000/tasks");
-    const data = res.json();
+    const data = await res.json();
 
     console.log(data);
     return(data);
   }
 
 
+  //GET db data: by an (id)
   const fetchTask = async (id)=>{
     const res = await fetch(`http://localhost:5000/tasks/${id}`);
-    const data = res.json();
+    const data = await res.json();
 
     console.log(data);
     return(data);
@@ -81,7 +83,7 @@ function App() {
       const deleteTask = async (id)=> {
         console.log('deleteTask', id)
 
-        //db-update:
+        //db-update: by an (id)
         await fetch(`http://localhost:5000/tasks/${id}`,
         {
           method: 'DELETE'
@@ -103,7 +105,7 @@ function App() {
         //modify-pulled-db-data:
         const updatedTask = {...taskToToggle, reminder:!taskToToggle.reminder}
 
-        //post-back-modified-db-data:
+        //PUT-modified-db-data: by an (id)
         const res = await fetch(`http://localhost:5000/tasks/${id}`,
         {
           method:'PUT',
@@ -139,7 +141,7 @@ function App() {
         //manual-post:
         /*setTasks([...tasks, {id:tasks.length+1, text, day, reminder}]);*/
 
-        //db-post:
+        //db-post: without (id)
         const res = await fetch(`http://localhost:5000/tasks/`,
         {
           method: 'POST',

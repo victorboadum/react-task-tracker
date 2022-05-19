@@ -42,8 +42,9 @@ const TaskDetails = () => {
     /*//DONT: use the <Navigate/>-redirect-Component, when: using the useNavigate()_obj as alternative
     if(error) { //redirect/navigate-back to a given location/route(eg: '/'), if: anything anonymous entered
         console.log(error);
-        return <Navigate to='/' /> //return it by a return-keyword(return): to complete the whole-rendering of the Component-func
-                                   //to avoid: the return-keyword below from rendering or return an additional functionality
+        return <Navigate to='/' /> //return it by a return-keyword(return): to complete the whole-rendering of the react-Component
+                                   //to avoid: the (return)-keyword below from rendering or returning an additional react-Component
+                                   //especially: when navigating or re-directing back or forward to a given react-Component
     }*/
 
   return (
